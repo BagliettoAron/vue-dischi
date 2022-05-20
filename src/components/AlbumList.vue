@@ -1,20 +1,18 @@
 <template>
   <div class="albumList">
     <div class="selection">
-      <SearchElement @selected='selectedOption($event)'/>
+      <SearchElement @scelta='selectedOption($event)'/>
     </div>
-  <div class="container d-flex justify-content-center align-content-center p-5">
-    <div class="container__list row w-75 text-center margin-auto row-cols-5 px-5">
-      <AlbumCard
-        v-for="(album, index) in albumsArray"
-        :key="index"
-        :AlbumItem="album"
-      />
+    <div class="container">
+      <div class="row text-center row-cols-5 m-5">
+        <AlbumCard
+          v-for="(album, index) in albumsArray"
+          :key="index"
+          :AlbumItem="album"
+        />
+      </div>
+    
     </div>
-  
-  </div>
-    class="album--wrap d-flex justify-content-center align-items-center my-5"
-  >
   </div>
 </template>
 
@@ -32,9 +30,9 @@ export default {
   },
 
   methods: {
-    selectedOption () {
+    selectedOption (genere) {
 
-      console.log('selezionato');
+      console.log('selezionato', genere);
     }
   },
 
@@ -62,9 +60,6 @@ export default {
 
     background-color: $background-color-album-list;
 
-  .album--wrap {
-    &__list {
-    }
-  }
+
 }
 </style>

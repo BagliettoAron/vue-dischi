@@ -1,16 +1,10 @@
 <template>
-<div class="container">
-<div class="row">
-  <div class="album col-12 g-2 p-1">
+  <div class="album m-1">
     <img :src="AlbumItem.poster" :alt="AlbumItem.title" />
     <p class="album__title text-center">{{ AlbumItem.title }}</p>
     <p class="album__author">{{ AlbumItem.author }}</p>
     <p class="album__year">{{ AlbumItem.year }}</p>
   </div>
-
-</div>
-
-</div>
 </template>
 
 <script>
