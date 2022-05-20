@@ -1,19 +1,26 @@
 <template>
-<div class="album--wrap d-flex justify-content-center align-items-center my-5  ">
-
-  <section class="album--wrap__list row w-75 row-cols-5 py-3">
-    <AlbumCard 
-    v-for="(album, index) in albumsArray" 
-    :key ="index" 
-    :AlbumItem ="album"
-    />
+  <div class="albumList">
+    <div class="selection">
+      <SearchElement @selected='selectedOption($event)'/>
+    </div>
+  <div class="container d-flex justify-content-center align-content-center p-5">
+    <div class="container__list row w-75 text-center margin-auto row-cols-5 px-5">
+      <AlbumCard
+        v-for="(album, index) in albumsArray"
+        :key="index"
+        :AlbumItem="album"
+      />
+    </div>
   
-  </section>
-</div>
+  </div>
+    class="album--wrap d-flex justify-content-center align-items-center my-5"
+  >
+  </div>
 </template>
 
 <script>
-import AlbumCard from "./AlbumCard.vue"
+import AlbumCard from "./AlbumCard.vue";
+import SearchElement from "./SearchElement.vue";
 import axios from "axios";
 
 export default {
@@ -21,12 +28,20 @@ export default {
 
   components: {
     AlbumCard,
+    SearchElement
+  },
+
+  methods: {
+    selectedOption () {
+
+      console.log('selezionato');
+    }
   },
 
   data: function () {
     return {
       albumsArray: [],
-    };
+    }; 
   },
 
   created() {
@@ -43,14 +58,13 @@ export default {
 @import "../style/variables.scss";
 @import "../style/common.scss";
 
-.album--wrap {
-
-    &__list{
+.albumList{
 
     background-color: $background-color-album-list;
+
+  .album--wrap {
+    &__list {
     }
-
+  }
 }
-
-
 </style>

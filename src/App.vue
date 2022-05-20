@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-  <AlbumList />
-    
+    <AlbumList />
   </div>
 </template>
 
@@ -9,20 +8,16 @@
 import AlbumList from "./components/AlbumList.vue";
 
 
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AlbumList,
-    
-}
-}
+  },
+};
 </script>
 
 <style lang="scss">
 @import "./style/common.scss";
 
-#app {
 
-}
 </style>
