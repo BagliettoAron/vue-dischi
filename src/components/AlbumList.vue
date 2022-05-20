@@ -1,7 +1,7 @@
 <template>
-<div class="album-wrap d-flex justify-content-center align-items-center ">
+<div class="album--wrap d-flex justify-content-center align-items-center my-5  ">
 
-  <section class="album-list row w-50 row-cols-5 ">
+  <section class="album--wrap__list row w-75 row-cols-5 py-3">
     <AlbumCard 
     v-for="(album, index) in albumsArray" 
     :key ="index" 
@@ -43,8 +43,12 @@ export default {
 @import "../style/variables.scss";
 @import "../style/common.scss";
 
-.album-wrap {
-    background-color: $background-color-album-kist;
+.album--wrap {
+
+    &__list{
+
+    background-color: $background-color-album-list;
+    }
 
 }
 
