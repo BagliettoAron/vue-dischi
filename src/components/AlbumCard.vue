@@ -1,9 +1,9 @@
 <template>
 <div class="album">
-    <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-    <p>New Jersey</p>
-    <p>Bon Jovi</p>
-    <p>1988</p>
+    <img :src="AlbumItem.poster" alt="AlbumItem.title">
+    <p class="title" >{{AlbumItem.title}}</p>
+    <p class="author">{{AlbumItem.author}}</p>
+    <p class="year" >{{AlbumItem.year}}</p>
 
 
 </div>
@@ -14,13 +14,26 @@
 <script>
 
 export default {
+    name: "AlbumCard",
+    props: {
+       AlbumItem: Object 
+    }
 
 }
 
 </script>
 
 
-<style>
-@import "../style/variables.scss"
+<style lang="scss" scoped>
+
+@import "../style/variables.scss";
+
+.album{
+
+    img {
+        width: 100%;
+
+    }
+}
 
 </style>

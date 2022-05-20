@@ -1,16 +1,15 @@
 <template>
-  <section class="album-list row w-75 row-cols-5 ">
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
-    <AlbumCard />
+<div class="album-wrap d-flex justify-content-center align-items-center ">
+
+  <section class="album-list row w-50 row-cols-5 ">
+    <AlbumCard 
+    v-for="(album, index) in albumsArray" 
+    :key ="index" 
+    :AlbumItem ="album"
+    />
+  
   </section>
+</div>
 </template>
 
 <script>
@@ -42,7 +41,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/variables.scss";
-@import "../style/common.scss"
+@import "../style/common.scss";
+
+.album-wrap {
+    background-color: $background-color-album-kist;
+
+}
 
 
 </style>
